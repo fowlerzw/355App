@@ -20,9 +20,22 @@ public class Activity2 extends AppCompatActivity {
         startActivity(Mainintent);
     }
 
-    //this method opens up the Activity2 scene which is the filters page
+    //this method opens up the Activity3 scene which is the filters page
     public void openActivity3(View view){
         Intent act3intent = new Intent(this, Activity3.class);
         startActivity(act3intent);
     }
+
+
+
+//    /*** MADE BY JESUS ON 10/06/2020 ********************************************/
+//    /**** NEED TO FIX THIS BUTTON; DOES NOT CALL ACT3, GOES BACK TO MAIN ACT ****/
+//    //opens tips menu from Activity2 (TIPS MENU = ACTIVITY3
+//    public void openActivity3(View view) {
+//        Intent tipsIntent = new Intent(this, Activity3.class);
+//        startActivity(tipsIntent);
+//    }
+//    /*** IF DELETED, NEED TO DELETE TIPS BUTTON ON ACT2.XML; ALL THE WAY AT THE BOTTOM *****/
+
+
 }

@@ -26,28 +26,28 @@
         android:id="@+id/button"
         android:layout_width="121dp"
         android:layout_height="55dp"
-        android:text="MainActivity"
         android:onClick="openMainActivity"
+        android:text="Intro Page (Main)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.832" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="118dp"
-        android:layout_height="51dp"
+        android:layout_width="103dp"
+        android:layout_height="36dp"
         android:layout_marginTop="36dp"
-        android:text="Activity3"
         android:onClick="openActivity3"
+        android:text="Tips (Act3)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799" />
+        app:layout_constraintVertical_bias="0.975" />
 
     <TextView
         android:id="@+id/textView2"

@@ -254,7 +254,7 @@
         android:id="@+id/button10"
         android:layout_width="80dp"
         android:layout_height="37dp"
-        android:text="Couple"
+        android:text="Pair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.519"

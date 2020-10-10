@@ -33,4 +33,5 @@ public class Activity4 extends AppCompatActivity {
     }
 
     //Jesus Midterm Commit #1
+    //Jesus Midterm Commit #2
 }

@@ -23,19 +23,6 @@
 
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="121dp"
-        android:layout_height="55dp"
-        android:onClick="openMainActivity"
-        android:text="Intro Page (Main)"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
-
-    <Button
         android:id="@+id/button2"
         android:layout_width="103dp"
         android:layout_height="36dp"
@@ -278,14 +265,14 @@
         android:id="@+id/button14"
         android:layout_width="122dp"
         android:layout_height="57dp"
-        android:text="Act 4 (roll)"
         android:onClick="openActivity4"
+        android:text="Act 4 (roll)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.878" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

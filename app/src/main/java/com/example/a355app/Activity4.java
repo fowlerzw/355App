@@ -31,8 +31,4 @@ public class Activity4 extends AppCompatActivity {
         Intent act3intent = new Intent(this, Activity3.class);
         startActivity(act3intent);
     }
-
-    //Jesus Midterm Commit #1
-    //Jesus Midterm Commit #2
-    //Jesus Midterm Commit #3
 }

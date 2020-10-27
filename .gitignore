@@ -12,3 +12,10 @@
 /captures
 .externalNativeBuild
 .cxx
+
+#local properties file
+local.properties
+
+#generated files
+bin/
+gen/

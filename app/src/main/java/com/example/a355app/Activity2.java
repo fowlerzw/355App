@@ -26,4 +26,10 @@ public class Activity2 extends AppCompatActivity {
         startActivity(act4intent);
     }
 
+    //This method opens up popup for type of food button
+    public void openPopUpFoodBtn(View view){
+        Intent TypeFoodBtn = new Intent(getApplicationContext(), PopUpFoodBtnActivity.class);
+        startActivity(TypeFoodBtn);
+    }
+
 }

@@ -1,9 +1,7 @@
 package com.example.a355app;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -32,7 +30,7 @@ public class PopUpFoodBtnActivity extends Activity {
 
         //this displays the popup
         DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        getWindowManager();
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;

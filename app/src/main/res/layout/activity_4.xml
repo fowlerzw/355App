@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2B8FC5"
     tools:context=".Activity4">
 
     <Button
@@ -67,4 +68,104 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:id="@+id/SelectionsLayout" >
+
+        <TextView
+            android:id="@+id/PriceHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="Price"
+            />
+        <TextView
+            android:id="@+id/PriceSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="2dp"
+            android:layout_toRightOf="@id/PriceHeader"
+            />
+        <TextView
+            android:id="@+id/StyleHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Style"
+            android:textSize="16dp"
+            android:layout_below="@id/PriceHeader"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/StyleSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Take-Out"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/StyleHeader"
+            android:layout_below="@id/PriceSelection"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/GroupHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="Group Size"
+            android:layout_below="@id/StyleHeader"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/GroupSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Solo"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/GroupHeader"
+            android:layout_below="@id/StyleSelection"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/FoodHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="Food Type"
+            android:layout_below="@id/GroupHeader"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/FoodSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="American
+"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/FoodHeader"
+            android:layout_below="@id/GroupSelection"
+            android:layout_marginTop="10dp"
+            />
+
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

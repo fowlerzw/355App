@@ -25,4 +25,5 @@ public class MainActivity extends AppCompatActivity {
         Intent act3intent = new Intent(this, Activity3.class);
         startActivity(act3intent);
     }
+
 }

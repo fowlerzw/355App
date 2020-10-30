@@ -104,19 +104,20 @@
             android:layout_below="@id/PriceHeader"
             android:layout_marginTop="10dp"
             />
+
         <TextView
             android:id="@+id/StyleSelection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Take-Out"
-            android:textColor="@android:color/holo_blue_light"
+            android:layout_below="@id/PriceSelection"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_toRightOf="@id/StyleHeader"
-            android:layout_below="@id/PriceSelection"
-            android:layout_marginTop="10dp"
-            />
+            android:clickable="false"
+            android:text="Take-Out"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16dp" />
         <TextView
             android:id="@+id/GroupHeader"
             android:layout_width="wrap_content"

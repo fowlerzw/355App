@@ -14,6 +14,8 @@ public class Restaurant {
     private String cost = LOW_COST;
     private String name = "McDonalds";
     private int numOfPeople = SOLO;
+    private String foodStyle = "American";
+    private ArrayList<String> keywords = new ArrayList<>();
 
     /*** maybe move this code to its own class (based on bookshelf lab) ********
     ArrayList<Restaurant> LowCostPlaces = new ArrayList<Restaurant>();
@@ -21,7 +23,7 @@ public class Restaurant {
     ArrayList<Restaurant> HighCostPlaces = new ArrayList<Restaurant>();
      *****************************************************************************/
 
-    public Restaurant (String cost, String name, int numOfPeople){
+    public Restaurant (String cost, String name, int numOfPeople, String foodStyle){
 
         if(!(cost.equals("$") || cost.equals("$$") || cost.equals("$$$"))){
             cost = "$";
@@ -33,10 +35,11 @@ public class Restaurant {
         this.cost = cost;
         this.name = name;
         this.numOfPeople = numOfPeople;
+        this.foodStyle = foodStyle;
     }
 
     public Restaurant(){
-        this("$", "McDonalds", 1);
+        this("$", "McDonalds", 1, "American");
     }
 
     public void setCost(String newCost){
@@ -63,49 +66,14 @@ public class Restaurant {
         return numOfPeople;
     }
 
-    /** FIGURE OUT WHY THIS DOES NOT WORK ***/
-//    @Override
-//    public String toString(String cost, String name, int numOfPeople){
-//
-//        String[] parameters = new String[3];
-//        String output = "";
-//
-//        switch(cost){
-//            case "$":
-//                parameters[0] = LOW_COST;
-//                break;
-//            case "$$":
-//                parameters[0] = MED_COST;
-//                break;
-//            case "$$$":
-//                parameters[0] = HIGH_COST;
-//                break;
-//            default :
-//                parameters[0] = LOW_COST;
-//                System.out.println("System chose the lowest parameter due to error");
-//                break;
-//        }
-//
-//        switch(numOfPeople){
-//            case 1:
-//                parameters[1] = "1 person";
-//                break;
-//            case 2:
-//                parameters[1] = "2 people";
-//                break;
-//            case 3:
-//                parameters[1] = "3 or more people";
-//                break;
-//            default:
-//                parameters[1] = "1 person";
-//                System.out.println("System chose the lowest parameter due to error");
-//        }
-//
-//        output = "You are headed to " + name + ", a " + parameters[0] + " with " + parameters[1] + ". Enjoy!";
-//
-//        return output;
-//    }
-/** FIGURE OUT WHY ABOVE DOES NOT WORK ****/
+    public void setFoodStyle(String foodStyle){
+        this.foodStyle = foodStyle;
+    }
+
+    public String getFoodStyle(){
+        return foodStyle;
+    }
+
 
     public String toString(){
         String cost = "";
@@ -142,6 +110,8 @@ public class Restaurant {
                 System.out.println("System chose the lowest parameter due to error");
         }
 
-        return "You're eating at " + name + ", a " + cost + " restaurant, with " + numOfPeople + ". Enjoy!";
+        return "You're eating at " + name + "(" + foodStyle + ") , a " + cost + " restaurant, with " + numOfPeople + ". Enjoy!";
     }
+
+
 }

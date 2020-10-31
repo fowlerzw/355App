@@ -27,8 +27,4 @@ jobs:
     
     - name: Unit Tests
       run: bash ./gradlew test --stacktrace
-    -name: Unit Test Results
-     uses: actions/upload-artifact@v1
-     with:
-        name: unit-test-results
-        path: ./app
+

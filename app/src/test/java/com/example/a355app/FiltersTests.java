@@ -9,7 +9,7 @@ public class FiltersTests {
 
     @Test
     public void Correct_Cost(){
-        assertEquals("$", Activity2.costOfRestaurant());
+        assertEquals("$$", Activity2.costOfRestaurant());
         System.out.println("low cost (true)");
     }
 

@@ -25,5 +25,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     
-    - name: Test
-      run: ./FiltersTests
+    - name: Unit Tests
+      run: bash ./gradlew test --stacktrace
+    -name: Unit Test Results
+     uses: actions/upload-artifact@v1
+     with:
+        name: unit-test-results
+        path: ./app

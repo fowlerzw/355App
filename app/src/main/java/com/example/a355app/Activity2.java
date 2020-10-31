@@ -2,6 +2,7 @@ package com.example.a355app;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.os.Bundle;
 import android.view.View;
@@ -37,9 +38,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$";
-                Button$.setBackgroundColor(Color.GRAY);
-                Button$$.setBackgroundColor(0xffd6d7d7);
-                Button$$$.setBackgroundColor(0xffd6d7d7);
+                Button$.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Button$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Button$$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -47,9 +48,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$$";
-                Button$$.setBackgroundColor(Color.GRAY);
-                Button$.setBackgroundColor(0xffd6d7d7);
-                Button$$$.setBackgroundColor(0xffd6d7d7);
+                Button$$.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Button$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Button$$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -57,9 +58,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$$$";
-                Button$$$.setBackgroundColor(Color.GRAY);
-                Button$.setBackgroundColor(0xffd6d7d7);
-                Button$$.setBackgroundColor(0xffd6d7d7);
+                Button$$$.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Button$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Button$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -71,9 +72,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Delivery";
-                Style1.setBackgroundColor(Color.GRAY);
-                Style2.setBackgroundColor(0xffd6d7d7);
-                Style3.setBackgroundColor(0xffd6d7d7);
+                Style1.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Style2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Style3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
 
             }
         });
@@ -82,9 +83,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Takeout";
-                Style2.setBackgroundColor(Color.GRAY);
-                Style1.setBackgroundColor(0xffd6d7d7);
-                Style3.setBackgroundColor(0xffd6d7d7);
+                Style2.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Style1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Style3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -92,9 +93,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Dine In";
-                Style3.setBackgroundColor(Color.GRAY);
-                Style1.setBackgroundColor(0xffd6d7d7);
-                Style2.setBackgroundColor(0xffd6d7d7);
+                Style3.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Style1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Style2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -106,9 +107,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Solo";
-                Group1.setBackgroundColor(Color.GRAY);
-                Group2.setBackgroundColor(0xffd6d7d7);
-                Group3.setBackgroundColor(0xffd6d7d7);
+                Group1.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Group2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Group3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -116,9 +117,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Pair";
-                Group2.setBackgroundColor(Color.GRAY);
-                Group1.setBackgroundColor(0xffd6d7d7);
-                Group3.setBackgroundColor(0xffd6d7d7);
+                Group2.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Group1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Group3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
 
@@ -126,9 +127,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Group";
-                Group3.setBackgroundColor(Color.GRAY);
-                Group1.setBackgroundColor(0xffd6d7d7);
-                Group2.setBackgroundColor(0xffd6d7d7);
+                Group3.setBackground(getResources().getDrawable(R.drawable.selected_buton));
+                Group1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Group2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
     }

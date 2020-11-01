@@ -14,20 +14,27 @@ public class Restaurant {
     private String cost = LOW_COST;
     private String name = "McDonalds";
     private int numOfPeople = SOLO;
-    private String foodStyle = "American";
+
+    private ArrayList<String> typeOfFood = new ArrayList<>();
     private ArrayList<String> keywords = new ArrayList<>();
 
+
     /*** maybe move this code to its own class (based on bookshelf lab) ********
-    ArrayList<Restaurant> LowCostPlaces = new ArrayList<Restaurant>();
-    ArrayList<Restaurant> MedCostPlaces = new ArrayList<Restaurant>();
-    ArrayList<Restaurant> HighCostPlaces = new ArrayList<Restaurant>();
+     ArrayList<Restaurant> LowCostPlaces = new ArrayList<Restaurant>();
+     ArrayList<Restaurant> MedCostPlaces = new ArrayList<Restaurant>();
+     ArrayList<Restaurant> HighCostPlaces = new ArrayList<Restaurant>();
      *****************************************************************************/
 
-    public Restaurant (String cost, String name, int numOfPeople, String foodStyle){
+    public Restaurant (String cost, String name, int numOfPeople,ArrayList<String> typeOfFood, ArrayList<String> keywords){
 
         if(!(cost.equals("$") || cost.equals("$$") || cost.equals("$$$"))){
             cost = "$";
+            typeOfFood.add("American");
+            keywords.add("Fast Food");
+            keywords.add("American");
+            keywords.add("McDonalds");
         }
+
         if(numOfPeople > 2){
             numOfPeople = 3;
         }
@@ -35,11 +42,14 @@ public class Restaurant {
         this.cost = cost;
         this.name = name;
         this.numOfPeople = numOfPeople;
-        this.foodStyle = foodStyle;
+
+        this.typeOfFood = typeOfFood;
+
+        this.keywords = keywords;
     }
 
     public Restaurant(){
-        this("$", "McDonalds", 1, "American");
+        this("$", "McDonalds", 1, new ArrayList<String>(), new ArrayList<String>());
     }
 
     public void setCost(String newCost){
@@ -64,14 +74,6 @@ public class Restaurant {
 
     public int getNumOfPeople(){
         return numOfPeople;
-    }
-
-    public void setFoodStyle(String foodStyle){
-        this.foodStyle = foodStyle;
-    }
-
-    public String getFoodStyle(){
-        return foodStyle;
     }
 
 
@@ -110,8 +112,17 @@ public class Restaurant {
                 System.out.println("System chose the lowest parameter due to error");
         }
 
-        return "You're eating at " + name + "(" + foodStyle + ") , a " + cost + " restaurant, with " + numOfPeople + ". Enjoy!";
+        return "You're eating at " + name + ", a " + cost + " restaurant, with " + numOfPeople + ". Enjoy!\n" +
+                "\ttype of food associated for " + name + " is: " + typeOfFood.toString() + "\n" +
+                "\t" + name + " keywords are: " + keywords.toString() + "\n";
     }
 
+    public ArrayList<String> getKeywords(){
+        return keywords;
+    }
+
+    public ArrayList<String> getTypeOfFood(){
+        return typeOfFood;
+    }
 
 }

@@ -29,10 +29,6 @@ public class Restaurant {
 
         if(!(cost.equals("$") || cost.equals("$$") || cost.equals("$$$"))){
             cost = "$";
-            typeOfFood.add("American");
-            keywords.add("Fast Food");
-            keywords.add("American");
-            keywords.add("McDonalds");
         }
 
         if(numOfPeople > 2){
@@ -50,6 +46,10 @@ public class Restaurant {
 
     public Restaurant(){
         this("$", "McDonalds", 1, new ArrayList<String>(), new ArrayList<String>());
+        typeOfFood.add("American");
+        keywords.add("Fast Food");
+        keywords.add("American");
+        keywords.add("McDonalds");
     }
 
     public void setCost(String newCost){

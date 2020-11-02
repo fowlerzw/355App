@@ -30,7 +30,7 @@ public class PopUpFoodBtnActivity extends Activity {
 
         //this displays the popup
         DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;

@@ -14,14 +14,18 @@ public class Activity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
 
-        String PriceString = getIntent().getStringExtra(Activity2.Price_Text);
-        String StyleString = getIntent().getStringExtra(Activity2.Style_Text);
+        String PriceString = getString(Activity2.Price_Text);
+        String StyleString = getString(Activity2.Style_Text);
 
         TextView Price = (TextView) findViewById(R.id.PriceSelection);
         TextView Style = (TextView) findViewById(R.id.StyleSelection);
 
         Price.setText(PriceString);
         Style.setText(StyleString);
+    }
+
+    private String getString(String price_text) {
+        return getIntent().getStringExtra(price_text);
     }
 
     //this method opens up the Activity Main scene which is the main page

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Flip n\' Pick</string>
+
+
+    <!-- Strings for On Boarding Screen -->
+
+    <!-- Titles -->
+    <string name="first_slide_title">Search Your Location</string>
+    <string name="second_slide_title">Make A Call</string>
+
+    <!-- Descriptions -->
+    <string name="first_slide_description">You can search any place nearby</string>
+    <string name="second_slide_description">We provide information</string>
+
+    <!-- Buttons -->
+    <string name="skip_bttn">Skip</string>
+    <string name="next_bttn">Next</string>
+    <string name="let_get_started">Let\'s Get Started</string>
 </resources>

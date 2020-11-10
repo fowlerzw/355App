@@ -16,12 +16,15 @@ public class Activity4 extends AppCompatActivity {
 
         String PriceString = getString(Activity2.Price_Text);
         String StyleString = getString(Activity2.Style_Text);
+        String GroupString = getString(Activity2.Group_Text);
 
         TextView Price = (TextView) findViewById(R.id.PriceSelection);
         TextView Style = (TextView) findViewById(R.id.StyleSelection);
+        TextView Group = (TextView) findViewById(R.id.GroupSelection);
 
         Price.setText(PriceString);
         Style.setText(StyleString);
+        Group.setText(GroupString);
     }
 
     private String getString(String price_text) {

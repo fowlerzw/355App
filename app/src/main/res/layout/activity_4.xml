@@ -9,9 +9,11 @@
 
     <Button
         android:id="@+id/button15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ReRoll (inactive)"
+        android:layout_width="179dp"
+        android:layout_height="93dp"
+        android:background="@drawable/brick_button"
+        android:fontFamily="@font/press_start_2p"
+        android:text="ReFlip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,91 +21,69 @@
         app:layout_constraintVertical_bias="0.688" />
 
     <Button
-        android:id="@+id/button16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Act Main (Start over)"
-        android:onClick="openActivityMain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.792" />
-
-    <Button
         android:id="@+id/button17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Repick (Filters)"
+        android:layout_width="179dp"
+        android:layout_height="93dp"
+        android:background="@drawable/brick_button"
+        android:fontFamily="@font/press_start_2p"
         android:onClick="openActivity2"
+        android:text="Filters"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.802" />
 
     <Button
         android:id="@+id/button18"
-        android:layout_width="103dp"
-        android:layout_height="36dp"
+        android:layout_width="81dp"
+        android:layout_height="69dp"
         android:layout_marginTop="36dp"
+        android:background="@drawable/tips_button"
         android:onClick="openActivity3"
-        android:text="Tips (Act3)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.949" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="193dp"
-        android:layout_height="59dp"
-        android:text="Act 4 (Roll Page)"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RelativeLayout
+        android:id="@+id/SelectionsLayout"
+        android:layout_width="303dp"
+        android:layout_height="133dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        android:id="@+id/SelectionsLayout" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/PriceHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="16dp"
             android:text="Price"
-            />
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/PriceSelection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:textColor="@android:color/holo_blue_light"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="2dp"
             android:layout_toRightOf="@id/PriceHeader"
-            />
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/StyleHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Style"
-            android:textSize="16dp"
             android:layout_below="@id/PriceHeader"
             android:layout_marginTop="10dp"
-            />
+            android:text="Style"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/StyleSelection"
@@ -118,55 +98,105 @@
             android:text="Take-Out"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="16dp" />
+
         <TextView
             android:id="@+id/GroupHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:text="Group Size"
             android:layout_below="@id/StyleHeader"
             android:layout_marginTop="10dp"
-            />
+            android:text="Group Size"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/GroupSelection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Solo"
-            android:textColor="@android:color/holo_blue_light"
+            android:layout_below="@id/StyleSelection"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_toRightOf="@id/GroupHeader"
-            android:layout_below="@id/StyleSelection"
-            android:layout_marginTop="10dp"
-            />
+            android:text="Solo"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16dp" />
+
         <TextView
             android:id="@+id/FoodHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="16dp"
-            android:text="Food Type"
             android:layout_below="@id/GroupHeader"
             android:layout_marginTop="10dp"
-            />
+            android:text="Food Type"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/FoodSelection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:layout_below="@id/GroupSelection"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/FoodHeader"
             android:text="American
 "
             android:textColor="@android:color/holo_blue_light"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_toRightOf="@id/FoodHeader"
-            android:layout_below="@id/GroupSelection"
-            android:layout_marginTop="10dp"
-            />
+            android:textSize="16dp" />
 
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="285dp"
+        android:layout_height="253dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401"
+        app:srcCompat="@drawable/coin8bit_final" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/press_start_2p"
+        android:text="[This is for the answer]"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.264" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="179dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/brick_button"
+        android:fontFamily="@font/press_start_2p"
+        android:text="Maps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/SelectionsLayout" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:fontFamily="@font/press_start_2p"
+        android:text="Tips"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button18"
+        app:layout_constraintVertical_bias="0.2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,7 @@
 package com.example.a355app;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+
 import android.widget.Button;
 import android.os.Bundle;
 import android.view.View;
@@ -132,6 +131,7 @@ public class Activity2 extends AppCompatActivity {
                 Group2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
             }
         });
+
     }
 
     //this method opens up the Activity3 scene which is the tips page

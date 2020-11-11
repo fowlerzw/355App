@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:background="#049CD8"
-=======
-    android:background="#00BCD4"
->>>>>>> 0b216eb780b9708cb530d6e5ac166375716ad4d2
     tools:context=".Activity2">
 
 

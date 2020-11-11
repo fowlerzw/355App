@@ -8,10 +8,10 @@
     </style>
 
     <style name="AppTheme.PopMe">
-
-    <item name="android:windowIsTranslucent">true</item>
-    <item name="android:windowCloseOnTouchOutside">false</item>
-
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/press_start_2p</item>
+        <item name="android:windowIsTranslucent">true</item>
+         <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
 
 </resources>

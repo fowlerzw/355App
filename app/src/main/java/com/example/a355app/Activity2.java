@@ -2,6 +2,7 @@ package com.example.a355app;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.os.Bundle;
@@ -38,9 +39,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$";
-                Button$.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Button$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Button$$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Button$.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
+                Button$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Button$$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
             }
         });
 
@@ -48,9 +49,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$$";
-                Button$$.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Button$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Button$$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Button$$.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
+                Button$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Button$$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
             }
         });
 
@@ -58,9 +59,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$$$";
-                Button$$$.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Button$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Button$$.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Button$$$.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
+                Button$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Button$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
             }
         });
 
@@ -72,9 +73,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Delivery";
-                Style1.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Style2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Style3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Style1.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
+                Style2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+                Style3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
 
             }
         });
@@ -83,9 +84,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Takeout";
-                Style2.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Style1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Style3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Style2.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
+                Style1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+                Style3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
             }
         });
 
@@ -93,9 +94,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Dine In";
-                Style3.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Style1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Style2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Style3.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
+                Style1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+                Style2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
             }
         });
 
@@ -107,9 +108,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Solo";
-                Group1.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Group2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Group3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Group1.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
+                Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
             }
         });
 
@@ -117,9 +118,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Pair";
-                Group2.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Group1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Group3.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Group2.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
+                Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
             }
         });
 
@@ -127,9 +128,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Group";
-                Group3.setBackground(getResources().getDrawable(R.drawable.selected_buton));
-                Group1.setBackground(getResources().getDrawable(R.drawable.unselected_button));
-                Group2.setBackground(getResources().getDrawable(R.drawable.unselected_button));
+                Group3.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
+                Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
             }
         });
     }

@@ -25,6 +25,7 @@ public class Activity4 extends AppCompatActivity {
         String FoodString = getString(Activity2.Food_Text);
 
 
+
         TextView Price = (TextView) findViewById(R.id.PriceSelection);
         TextView Style = (TextView) findViewById(R.id.StyleSelection);
         TextView Group = (TextView) findViewById(R.id.GroupSelection);
@@ -37,21 +38,9 @@ public class Activity4 extends AppCompatActivity {
         //HARDCODED FOR AMERICAN IN FOODTYPE
         Food.setText("AMERICAN");
 
+
         try{
-
-
-
-//            //this method opens up the Activity4 scene which is the roll page
-//            public void openActivity4(View view) {
-//                Intent act4intent = new Intent(this, Activity4.class);
-//                act4intent.putExtra(Price_Text, Price);
-//                act4intent.putExtra(Style_Text, Style);
-//                act4intent.putExtra(Group_Text, Group);
-//                act4intent.putExtra(Food_Text, Food);
-//                startActivity(act4intent);
-//            }
-
-            String FinalString = getString(processRestaurants(PriceString));
+            String FinalString = getString(processRestaurants(Activity2.Price_Text));
             TextView Final = (TextView) findViewById(R.id.FinalSelection);
             Final.setText(FinalString);
         }
@@ -59,9 +48,13 @@ public class Activity4 extends AppCompatActivity {
             System.out.println("the restaurants.txt could not be found, please update this issue.");
         }
 
-
-
     }
+
+    //////////// method made for Testing /////////////////////////
+    public static String getPrice(){
+        return Activity2.Price_Text;
+    }
+    //////////////////////////////////////////////////////////////
 
     private String getString(String price_text) {
         return getIntent().getStringExtra(price_text);
@@ -87,8 +80,8 @@ public class Activity4 extends AppCompatActivity {
 
 
 
-
     public static String processRestaurants(String cost)throws FileNotFoundException {
+
 
         File text = new File("src/restaurants.txt");
         Scanner scandoc = new Scanner(text);
@@ -144,7 +137,8 @@ public class Activity4 extends AppCompatActivity {
         System.out.println("Values of " + cost + " in list are from " + firstIndex + " and " + lastIndex);
         String nameOfPlace = (list.get(lastIndex/2).getName());
 
-        return nameOfPlace;
+        return "nameOfPlace";
 
     }
+
 }

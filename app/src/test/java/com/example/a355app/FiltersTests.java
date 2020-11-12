@@ -15,7 +15,7 @@ public class FiltersTests {
         System.out.println("low cost (true)");
 
         try{
-            System.out.println("THE VALUE RETURNED FROM METHOD IS: " + Activity4.processRestaurants("$"));
+            System.out.println("THE VALUE RETURNED FROM METHOD IS: " + Activity4.processRestaurants(Activity4.getPrice()));
         }
         catch(FileNotFoundException ex){
             System.out.println("NOT WORKING");

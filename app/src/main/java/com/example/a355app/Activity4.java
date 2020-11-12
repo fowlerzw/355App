@@ -43,13 +43,16 @@ public class Activity4 extends AppCompatActivity {
 
         try{
             String FinalString = getString(processRestaurants(Activity2.Price_Text));
+            
+            /// PULL THESE TWO OUT AND HARD CODE TEXT IN FINAL.SETTEXT(); METHOD TO SEE WHERE ISSUES LIE ///
+            TextView Final = (TextView) findViewById(R.id.FinalSelection);
+            Final.setText(FinalString);
+            ////////////////////////////////////////////////////////////////////////////////////////////////
         }
         catch(FileNotFoundException ex){
             System.out.println("the restaurants.txt could not be found, please update this issue.");
         }
 
-        TextView Final = (TextView) findViewById(R.id.FinalSelection);
-        Final.setText(FinalString);
 
 
     }

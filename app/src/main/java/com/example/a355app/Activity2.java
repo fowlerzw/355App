@@ -108,9 +108,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Solo";
-                Group1.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
-                Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
-                Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Group1.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
+                Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+                Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
             }
         });
 
@@ -118,9 +118,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Pair";
-                Group2.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
-                Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
-                Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Group2.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
+                Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+                Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
             }
         });
 
@@ -128,9 +128,9 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Group";
-                Group3.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
-                Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
-                Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+                Group3.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
+                Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+                Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
             }
         });
     }

@@ -15,7 +15,7 @@ public class Restaurant {
     private String name = "McDonalds";
     private int numOfPeople = SOLO;
 
-    private ArrayList<String> typeOfFood = new ArrayList<>();
+    private String typeOfFood;
     private ArrayList<String> keywords = new ArrayList<>();
 
 
@@ -25,7 +25,7 @@ public class Restaurant {
      ArrayList<Restaurant> HighCostPlaces = new ArrayList<Restaurant>();
      *****************************************************************************/
 
-    public Restaurant (String cost, String name, int numOfPeople,ArrayList<String> typeOfFood, ArrayList<String> keywords){
+    public Restaurant (String cost, String name, int numOfPeople, String typeOfFood, ArrayList<String> keywords){
 
         if(!(cost.equals("$") || cost.equals("$$") || cost.equals("$$$"))){
             cost = "$";
@@ -45,8 +45,7 @@ public class Restaurant {
     }
 
     public Restaurant(){
-        this("$", "McDonalds", 1, new ArrayList<String>(), new ArrayList<String>());
-        typeOfFood.add("American");
+        this("$", "McDonalds", 1, "American", new ArrayList<String>());
         keywords.add("Fast Food");
         keywords.add("American");
         keywords.add("McDonalds");
@@ -121,7 +120,11 @@ public class Restaurant {
         return keywords;
     }
 
-    public ArrayList<String> getTypeOfFood(){
+    public void setTypeOfFood(String typeOfFood){
+        this.typeOfFood = typeOfFood;
+    }
+
+    public String getTypeOfFood(){
         return typeOfFood;
     }
 

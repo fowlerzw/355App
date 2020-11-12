@@ -143,8 +143,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_toRightOf="@id/FoodHeader"
-            android:text="American
-"
+            android:text="American"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="16dp" />
 
@@ -164,7 +163,7 @@
         app:srcCompat="@drawable/coin8bit_final" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/FinalSelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/press_start_2p"

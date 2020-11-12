@@ -39,14 +39,18 @@ public class Activity4 extends AppCompatActivity {
         Food.setText("AMERICAN");
 
 
+
+
         try{
             String FinalString = getString(processRestaurants(Activity2.Price_Text));
-            TextView Final = (TextView) findViewById(R.id.FinalSelection);
-            Final.setText(FinalString);
         }
         catch(FileNotFoundException ex){
             System.out.println("the restaurants.txt could not be found, please update this issue.");
         }
+
+        TextView Final = (TextView) findViewById(R.id.FinalSelection);
+        Final.setText(FinalString);
+
 
     }
 

@@ -32,7 +32,13 @@
             android:label="Tips Page" />
         <activity
             android:name=".Activity4"
-            android:label="Maps Page" />
+            android:label="Maps Page"
+            android:parentActivityName=".Activity2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.a355app.Activity2" />
+        </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

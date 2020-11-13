@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/button15"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:background="@drawable/unselectedbrickpair"
         android:fontFamily="@font/press_start_2p"
         android:text="ReFlip"
@@ -20,22 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.688" />
-
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
-        android:background="@drawable/unselectedbrickpair"
-        android:fontFamily="@font/press_start_2p"
-        android:onClick="openActivity2"
-        android:text="Filters"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/button18"
@@ -179,8 +163,8 @@
 
     <Button
         android:id="@+id/button16"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:background="@drawable/unselectedbrickpair"
         android:fontFamily="@font/press_start_2p"
         android:text="Maps"
@@ -190,7 +174,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <TextView
         android:id="@+id/textView10"

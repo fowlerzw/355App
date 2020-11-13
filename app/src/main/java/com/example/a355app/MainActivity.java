@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 //    public void onWindowFocusChanged(boolean hasFocus){
 //        super.onWindowFocusChanged(hasFocus);
 //        coinGlareAnimation.start();
-//
-//    }
+
+//  }
 
     //this method opens up the Activity2 scene which is the filters page
     public void openActivity2(View view){

@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/ezgif_com_gif_maker"
-        />
+        android:onClick="openActivity2" />
 
+    <!--old button-->
 <!--    <Button-->
 <!--        android:id="@+id/button"-->
 <!--        android:layout_width="264dp"-->

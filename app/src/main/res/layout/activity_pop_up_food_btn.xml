@@ -14,6 +14,7 @@
         android:background="@drawable/selectedbricksolo"
         android:fontFamily="@font/press_start_2p"
         android:text="Apply"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"

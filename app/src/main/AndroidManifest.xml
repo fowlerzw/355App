@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".Activity2"
-            android:label="Filters Page"
+            android:label="Back"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

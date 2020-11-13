@@ -8,8 +8,14 @@ import android.widget.Button;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Activity2 extends AppCompatActivity {
 
@@ -17,11 +23,14 @@ public class Activity2 extends AppCompatActivity {
     public static final String Style_Text = "com.exaple.355App.Style_Text";
     public static final String Group_Text = "com.example.355App.Group_Text";
     public static final String Food_Text = "com.example.355App.Food_Text";
+    public static final String Final_Text = "com.example.355App.Final_Text";
+    private static String cost;
 
     String Price = "None Selected";
     String Style = "None Selected";
     String Group = "None Selected";
     String Food = "None Selected";
+    String Final = "None Selected";
 
     //Restaurant object: reference Class java file to see arguments required
     Restaurant placeID = new Restaurant();
@@ -65,6 +74,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
+
         final Button Style1 = (Button) findViewById(R.id.button6);
         final Button Style2 = (Button) findViewById(R.id.button7);
         final Button Style3 = (Button) findViewById(R.id.button11);
@@ -100,6 +110,7 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
+
         final Button Group1 = (Button) findViewById(R.id.button8);
         final Button Group2 = (Button) findViewById(R.id.button10);
         final Button Group3 = (Button) findViewById(R.id.button9);
@@ -133,6 +144,8 @@ public class Activity2 extends AppCompatActivity {
                 Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
             }
         });
+
+
     }
 
     //this method opens up the Activity3 scene which is the tips page
@@ -148,6 +161,7 @@ public class Activity2 extends AppCompatActivity {
         act4intent.putExtra(Style_Text, Style);
         act4intent.putExtra(Group_Text, Group);
         act4intent.putExtra(Food_Text, Food);
+        act4intent.putExtra(Final_Text, Final);
         startActivity(act4intent);
     }
 

@@ -3,8 +3,10 @@ package com.example.a355app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.File;
@@ -38,7 +40,16 @@ public class Activity4 extends AppCompatActivity {
         //HARDCODED FOR AMERICAN IN FOODTYPE
         Food.setText("AMERICAN");
 
+        Button mapButton = (Button) findViewById(R.id.button16);
+        Uri address = Uri.parse("geo:0,0 ?q=Canes+VCU");
+        final Intent  openMaps = new Intent(Intent.ACTION_VIEW, address);
 
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(openMaps);
+            }
+        });
 
 
         try{
@@ -147,5 +158,6 @@ public class Activity4 extends AppCompatActivity {
         return "nameOfPlace";
 
     }
+
 
 }

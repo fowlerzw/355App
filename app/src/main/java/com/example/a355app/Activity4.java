@@ -27,7 +27,6 @@ public class Activity4 extends AppCompatActivity {
         String FoodString = getString(Activity2.Food_Text);
 
 
-
         TextView Price = (TextView) findViewById(R.id.PriceSelection);
         TextView Style = (TextView) findViewById(R.id.StyleSelection);
         TextView Group = (TextView) findViewById(R.id.GroupSelection);
@@ -59,9 +58,10 @@ public class Activity4 extends AppCompatActivity {
             TextView Final = (TextView) findViewById(R.id.FinalSelection);
             Final.setText(FinalString);
             ////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("RESTAURANTS WERE READ FROM LIST! <----");
         }
         catch(FileNotFoundException ex){
-            System.out.println("the restaurants.txt could not be found, please update this issue.");
+            System.out.println("THE RESTAURANTS.TXT FILE WAS NOT FOUND. PLEASE UPDATE THIS ISSUE <----");
         }
 
 

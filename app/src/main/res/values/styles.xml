@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">#2B8FC5</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/press_start_2p</item>
     </style>
 
     <style name="AppTheme.PopMe">

@@ -240,7 +240,8 @@
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TypeFoodBtn" />
+                app:layout_constraintTop_toBottomOf="@id/TypeFoodBtn"
+                android:layout_marginTop="10dp"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -249,7 +250,7 @@
         android:id="@+id/tipsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="10dp"
@@ -257,8 +258,8 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="76dp"
-            android:layout_height="75dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:background="@drawable/tips_button"
@@ -269,8 +270,9 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button2"
             android:fontFamily="@font/press_start_2p"
+            android:layout_below="@id/button2"
+            android:layout_marginTop="25dp"
             android:text="Tips"
             android:textColor="#000000" />
     </RelativeLayout>

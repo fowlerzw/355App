@@ -9,12 +9,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Activity4 extends AppCompatActivity {
+
+    private TextView FinalResult;
+    private String FinalRestaurantName;
+    private ArrayList<Restaurant> list = new ArrayList<>();
+    private ArrayList<Integer> storedRandomInts = new ArrayList<>();
+    private int lastNumber = -1;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +52,14 @@ public class Activity4 extends AppCompatActivity {
         //HARDCODED FOR AMERICAN IN FOODTYPE
         Food.setText("AMERICAN");
 
+        //calls the random food object cascade of methods calls
+        FinalResult = (TextView) findViewById(R.id.FinalResult);
+        getBodyText();
+
+
         Button mapButton = (Button) findViewById(R.id.button16);
-        Uri address = Uri.parse("geo:0,0 ?q=Canes+VCU");
-        final Intent  openMaps = new Intent(Intent.ACTION_VIEW, address);
+        Uri address = Uri.parse("geo:0,0 ?q=Raising_Canes+78245");
+        final Intent openMaps = new Intent(Intent.ACTION_VIEW, address);
 
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,22 +67,6 @@ public class Activity4 extends AppCompatActivity {
                 startActivity(openMaps);
             }
         });
-
-
-        try{
-            String FinalString = getString(processRestaurants(Activity2.Price_Text));
-            
-            /// PULL THESE TWO OUT AND HARD CODE TEXT IN FINAL.SETTEXT(); METHOD TO SEE WHERE ISSUES LIE ///
-            TextView Final = (TextView) findViewById(R.id.FinalSelection);
-            Final.setText(FinalString);
-            ////////////////////////////////////////////////////////////////////////////////////////////////
-            System.out.println("RESTAURANTS WERE READ FROM LIST! <----");
-        }
-        catch(FileNotFoundException ex){
-            System.out.println("THE RESTAURANTS.TXT FILE WAS NOT FOUND. PLEASE UPDATE THIS ISSUE <----");
-        }
-
-
 
     }
 
@@ -97,48 +99,96 @@ public class Activity4 extends AppCompatActivity {
     }
 
 
+    public void getBodyText() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
 
-    public static String processRestaurants(String cost)throws FileNotFoundException {
+                //converts our makeshift database into a String url
+                String url="https://docs.google.com/document/d/e/2PACX-1vSSKMiZ9pAhMDyzzCu3U1v6SRjxd52SIlEZhy2kBZJLWYvtzPayWftNxZhpb5xVI2aDxa6lUx-VvSze/pub";
+
+                // creates a Document object from the String url online
+                // this is the Google Docs we created, the url present above is the published page NOT THE UPDATABLE VERSION
+                Document onlineDoc = null;
+                try {
+                    onlineDoc = Jsoup.connect(url).get();
+                } catch (IOException e) {
+                    System.out.println("Something went wrong with the online document. Please address immediately!!!");
+                }
+
+                //takes the online Google Docs and turns the whole published page into a String Object
+                String wholePublishedPage = onlineDoc.text();
+                getLines(wholePublishedPage);
+            }
+        }).start();
+    } // end getBodyText method
 
 
-        File text = new File("src/restaurants.txt");
-        Scanner scandoc = new Scanner(text);
-        ArrayList<Restaurant> list = new ArrayList<>();
+    public void getLines(String docBody){
+
+        // dynamically sets the body to exactly the information needed; parsed from online
+        docBody = docBody.substring(300, docBody.length()-38);
+
+        String wholeLine = "";
+        int i = 0;
         int arraySize = 0;
 
+        for(i = 0; i < docBody.length(); i++){
 
-        while(scandoc.hasNext()){
+            if(docBody.substring(i, i+1).equals(" ")){
 
-            String wholeLine = scandoc.nextLine();
-            String[] tokens = wholeLine.split(",");
+                wholeLine = wholeLine.replaceAll("\\s", "");
+                createArrayList(wholeLine);
+                wholeLine = "";
+                arraySize++;
 
-            Restaurant place = new Restaurant();
-            place.setCost(tokens[0]);
-            place.setName(tokens[1]);
-            place.setTypeOfFood(tokens[2]);
+                if(i != docBody.length()-1){
+                    //wholeLine += "\b";
+                    System.out.println();
+                }
+            }
+            wholeLine += docBody.substring(i,i+1);
+        }// end for loop
 
-            list.add(place);
-
-            arraySize++;
+        processRestaurants("$$", arraySize);
 
 
-        }
+    }// end getLines method
+
+
+    public void createArrayList(String wholeLine){
+
+        String[] tokens = wholeLine.split(",");
+
+        Restaurant place = new Restaurant();
+        place.setCost(tokens[0]);
+        place.setName(tokens[1]);
+        place.setTypeOfFood(tokens[2]);
+
+        list.add(place);
+    } // end createArrayList method
+
+
+    public void processRestaurants(String cost, int arraySize){
 
         int breakValue = -1;
         int firstIndex = 0, lastIndex = 0;
+
         for(int i = 0 ; i < arraySize; i++){
 
             if(cost.equals(list.get(i).getCost()) && breakValue < 0){
                 firstIndex = i;
                 breakValue++;
                 lastIndex = firstIndex;
+
                 while(list.get(lastIndex).getCost().equals(cost)){
-                    System.out.println(list.get(lastIndex).getName());
+                    //System.out.println(list.get(lastIndex).getName());
                     if(lastIndex == arraySize-1){
                         break;
                     }
                     lastIndex++;
                 }
+
                 if(!(cost.equals("$$$"))){
                     lastIndex--;
                 }
@@ -148,16 +198,64 @@ public class Activity4 extends AppCompatActivity {
 
                 break;
             }
+        }// END FOR LOOP
 
+        int randomRestaurant = (int) (Math.random() *(lastIndex - firstIndex) + firstIndex);
+        checkRepeats(randomRestaurant, firstIndex, lastIndex);
+    } // end processFile method
 
+    public int randomRestaurant(int firstIndex, int lastIndex){
+        return (int) (Math.random() *(lastIndex - firstIndex) + (firstIndex+1));
+    }
+
+    public void checkRepeats(int randomRestaurant, int firstIndex, int lastIndex){
+        
+        int i = 0;
+
+        System.out.println("WILL CLEAR AT SIZE: " + ((lastIndex - firstIndex) + 1));
+        System.out.println("LAST NUMBER STORED: "+ lastNumber);
+        System.out.println(firstIndex + " - " + lastIndex);
+        if(storedRandomInts.size() == ((lastIndex - firstIndex)+1)){
+            System.out.println(" -------------------- CLEARED AT SIZE OF: ---> " + storedRandomInts.size());
+            storedRandomInts.clear();
         }
 
-        System.out.println("Values of " + cost + " in list are from " + firstIndex + " and " + lastIndex);
-        String nameOfPlace = (list.get(lastIndex/2).getName());
+        for(i = 0; i < storedRandomInts.size(); i++) {
+            if (randomRestaurant == storedRandomInts.get(i) || randomRestaurant == lastNumber) {
+                System.out.println("ALREADY STORED:   --> " + storedRandomInts.get(i) + " " + list.get(randomRestaurant).getName() + "    ARRAY SIZE: "  + storedRandomInts.size());
+                randomRestaurant = randomRestaurant(firstIndex, lastIndex);
+                System.out.println("reroll while loop: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+                i = -1;
+            }
+        }
+        
+        System.out.println("out while loop:   --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
 
-        return "nameOfPlace";
+        storedRandomInts.add(randomRestaurant);
+        lastNumber = randomRestaurant;
+        System.out.println("ADDED THE NUMBER: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+
+
+
+        this.FinalRestaurantName = list.get(randomRestaurant).getName();
+        displayRestaurant();
 
     }
+
+    public void displayRestaurant(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                System.out.println("FNR IN  DISPLAYRESTAURANT METHOD: " + FinalRestaurantName);
+                FinalResult.setText(FinalRestaurantName);
+                //return this.FinalRestaurantName;
+
+            }
+        });
+    }
+
+
 
 
 }

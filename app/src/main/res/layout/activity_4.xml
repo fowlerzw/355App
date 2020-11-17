@@ -128,15 +128,15 @@
         android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FinalSelection"
+        app:layout_constraintTop_toBottomOf="@id/FinalResult"
         app:srcCompat="@drawable/coin8bit_final" />
 
 
     <TextView
-        android:id="@+id/FinalSelection"
+        android:id="@+id/FinalResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Raising Canes"
+        android:hint="Random Restaurant"
         android:textColor="#000000"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"

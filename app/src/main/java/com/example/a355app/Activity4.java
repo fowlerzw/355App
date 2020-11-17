@@ -12,12 +12,9 @@ import android.widget.TextView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.BreakIterator;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Activity4 extends AppCompatActivity {
 
@@ -26,7 +23,7 @@ public class Activity4 extends AppCompatActivity {
     private ArrayList<Restaurant> list = new ArrayList<>();
     private ArrayList<Integer> storedRandomInts = new ArrayList<>();
     private int lastNumber = -1;
-
+    private String GlobalPrice;
 
 
     @Override
@@ -54,6 +51,7 @@ public class Activity4 extends AppCompatActivity {
 
         //calls the random food object cascade of methods calls
         FinalResult = (TextView) findViewById(R.id.FinalResult);
+        GlobalPrice = PriceString;
         getBodyText();
 
 
@@ -142,17 +140,11 @@ public class Activity4 extends AppCompatActivity {
                 wholeLine = "";
                 arraySize++;
 
-                if(i != docBody.length()-1){
-                    //wholeLine += "\b";
-                    System.out.println();
-                }
             }
             wholeLine += docBody.substring(i,i+1);
         }// end for loop
 
-        processRestaurants("$$", arraySize);
-
-
+        processRestaurants(GlobalPrice, arraySize);
     }// end getLines method
 
 
@@ -212,50 +204,41 @@ public class Activity4 extends AppCompatActivity {
         
         int i = 0;
 
-        System.out.println("WILL CLEAR AT SIZE: " + ((lastIndex - firstIndex) + 1));
-        System.out.println("LAST NUMBER STORED: "+ lastNumber);
-        System.out.println(firstIndex + " - " + lastIndex);
+        //System.out.println("WILL CLEAR AT SIZE: " + ((lastIndex - firstIndex) + 1));
+        //System.out.println("LAST NUMBER STORED: "+ lastNumber);
+        //System.out.println(firstIndex + " - " + lastIndex);
         if(storedRandomInts.size() == ((lastIndex - firstIndex)+1)){
-            System.out.println(" -------------------- CLEARED AT SIZE OF: ---> " + storedRandomInts.size());
+            //System.out.println(" -------------------- CLEARED AT SIZE OF: ---> " + storedRandomInts.size());
             storedRandomInts.clear();
         }
 
         for(i = 0; i < storedRandomInts.size(); i++) {
             if (randomRestaurant == storedRandomInts.get(i) || randomRestaurant == lastNumber) {
-                System.out.println("ALREADY STORED:   --> " + storedRandomInts.get(i) + " " + list.get(randomRestaurant).getName() + "    ARRAY SIZE: "  + storedRandomInts.size());
+                //System.out.println("ALREADY STORED:   --> " + storedRandomInts.get(i) + " " + list.get(randomRestaurant).getName() + "    ARRAY SIZE: "  + storedRandomInts.size());
                 randomRestaurant = randomRestaurant(firstIndex, lastIndex);
-                System.out.println("reroll while loop: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+                //System.out.println("reroll while loop: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
                 i = -1;
             }
         }
         
-        System.out.println("out while loop:   --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+        //System.out.println("out while loop:   --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
 
         storedRandomInts.add(randomRestaurant);
         lastNumber = randomRestaurant;
-        System.out.println("ADDED THE NUMBER: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+        //System.out.println("ADDED THE NUMBER: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+        FinalRestaurantName = list.get(randomRestaurant).getName();
 
-
-
-        this.FinalRestaurantName = list.get(randomRestaurant).getName();
         displayRestaurant();
-
     }
 
     public void displayRestaurant(){
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
-                System.out.println("FNR IN  DISPLAYRESTAURANT METHOD: " + FinalRestaurantName);
                 FinalResult.setText(FinalRestaurantName);
-                //return this.FinalRestaurantName;
-
             }
         });
+
     }
-
-
-
 
 }

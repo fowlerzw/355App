@@ -97,24 +97,24 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/FoodHeader"
+            android:id="@+id/ZipHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/GroupHeader"
             android:layout_marginTop="10dp"
-            android:text="Food"
+            android:text="Zip"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/FoodSelection"
+            android:id="@+id/ZipSelection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/GroupHeader"
-            android:layout_marginLeft="39dp"
+            android:layout_marginLeft="52dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:layout_toRightOf="@id/FoodHeader"
+            android:layout_toRightOf="@id/ZipHeader"
             android:text="None-Selected"
             android:textColor="#000000"
             android:textSize="12sp" />

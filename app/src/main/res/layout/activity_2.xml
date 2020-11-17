@@ -214,20 +214,19 @@
 
             </RelativeLayout>
 
-            <Button
-                android:id="@+id/TypeFoodBtn"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_margin="24dp"
-                android:background="@drawable/unselectedbrickpair"
-                android:fontFamily="@font/press_start_2p"
-                android:onClick="openPopUpFoodBtn"
-                android:text="Type of Food"
-                android:textColor="#FFFFFF"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
+            <EditText
+                android:id="@+id/ZipCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:hint="Enter Zip Code"
+                android:textColorHint="#000000"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/GroupLayout" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/GroupLayout"
+                android:layout_marginTop="10dp"
+                android:background="#cb741c"
+                />
 
             <Button
                 android:id="@+id/button14"
@@ -240,7 +239,7 @@
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TypeFoodBtn"
+                app:layout_constraintTop_toBottomOf="@id/ZipCode"
                 android:layout_marginTop="10dp"/>
 
 

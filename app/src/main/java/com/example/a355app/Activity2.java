@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,14 +23,14 @@ public class Activity2 extends AppCompatActivity {
     public static final String Price_Text = "com.example.355App.Price_Text";
     public static final String Style_Text = "com.exaple.355App.Style_Text";
     public static final String Group_Text = "com.example.355App.Group_Text";
-    public static final String Food_Text = "com.example.355App.Food_Text";
+    public static final String Zip_Text = "com.example.355App.Zip_Text";
     public static final String Final_Text = "com.example.355App.Final_Text";
     private static String cost;
 
     String Price = "None Selected";
     String Style = "None Selected";
     String Group = "None Selected";
-    String Food = "None Selected";
+    String Zip = "None Entered";
     String Final = "None Selected";
 
     //Restaurant object: reference Class java file to see arguments required
@@ -40,6 +41,7 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
+        final EditText zip = (EditText) findViewById(R.id.ZipCode);
         final Button Button$ = (Button) findViewById(R.id.button3);
         final Button Button$$ = (Button) findViewById(R.id.button4);
         final Button Button$$$ = (Button) findViewById(R.id.button5);
@@ -146,6 +148,8 @@ public class Activity2 extends AppCompatActivity {
         });
 
 
+
+
     }
 
     //this method opens up the Activity3 scene which is the tips page
@@ -160,7 +164,9 @@ public class Activity2 extends AppCompatActivity {
         act4intent.putExtra(Price_Text, Price);
         act4intent.putExtra(Style_Text, Style);
         act4intent.putExtra(Group_Text, Group);
-        act4intent.putExtra(Food_Text, Food);
+        EditText zip = (EditText) findViewById(R.id.ZipCode);
+        Zip = zip.getText().toString();
+        act4intent.putExtra(Zip_Text, Zip);
         act4intent.putExtra(Final_Text, Final);
         startActivity(act4intent);
     }

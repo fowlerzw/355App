@@ -34,20 +34,20 @@ public class Activity4 extends AppCompatActivity {
         String PriceString = getString(Activity2.Price_Text);
         String StyleString = getString(Activity2.Style_Text);
         String GroupString = getString(Activity2.Group_Text);
-        String FoodString = getString(Activity2.Food_Text);
+        String ZipString = getString(Activity2.Zip_Text);
 
 
         TextView Price = (TextView) findViewById(R.id.PriceSelection);
         TextView Style = (TextView) findViewById(R.id.StyleSelection);
         TextView Group = (TextView) findViewById(R.id.GroupSelection);
-        TextView Food = (TextView) findViewById(R.id.FoodSelection);
+        TextView Zip = (TextView) findViewById(R.id.ZipSelection);
 
 
         Price.setText(PriceString);
         Style.setText(StyleString);
         Group.setText(GroupString);
         //HARDCODED FOR AMERICAN IN FOODTYPE
-        Food.setText("AMERICAN");
+        Zip.setText(ZipString);
 
         //calls the random food object cascade of methods calls
         FinalResult = (TextView) findViewById(R.id.FinalResult);

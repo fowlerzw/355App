@@ -147,9 +147,6 @@ public class Activity2 extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 
     //this method opens up the Activity3 scene which is the tips page

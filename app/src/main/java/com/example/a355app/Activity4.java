@@ -56,7 +56,7 @@ public class Activity4 extends AppCompatActivity {
 
 
         Button mapButton = (Button) findViewById(R.id.button16);
-        Uri address = Uri.parse("geo:0,0 ?q=Raising_Canes+78245");
+        Uri address = Uri.parse("geo:0,0 ?q=Raising_Canes+" + ZipString);
         final Intent openMaps = new Intent(Intent.ACTION_VIEW, address);
 
         mapButton.setOnClickListener(new View.OnClickListener() {

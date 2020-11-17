@@ -66,6 +66,9 @@ public class Activity4 extends AppCompatActivity {
             }
         });
 
+
+        /*** TESTING **/
+        //System.out.println("------> " + list.get(2).getName());
     }
 
     //////////// method made for Testing /////////////////////////
@@ -144,6 +147,7 @@ public class Activity4 extends AppCompatActivity {
             wholeLine += docBody.substring(i,i+1);
         }// end for loop
 
+        System.out.println("GLOBAL PRICE: ---->" + GlobalPrice);
         processRestaurants(GlobalPrice, arraySize);
     }// end getLines method
 

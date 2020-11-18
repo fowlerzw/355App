@@ -128,7 +128,6 @@
         android:id="@+id/gifCoin2"
         android:layout_width="396dp"
         android:layout_height="428dp"
-        android:onClick="openActivity2"
         android:src="@drawable/flippinggif_not_infinite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

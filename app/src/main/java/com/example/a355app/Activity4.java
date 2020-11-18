@@ -24,6 +24,8 @@ public class Activity4 extends AppCompatActivity {
     private ArrayList<Integer> storedRandomInts = new ArrayList<>();
     private int lastNumber = -1;
     private String GlobalPrice;
+    private String GlobalZip;
+    private Button mapButton;
 
 
     @Override
@@ -46,29 +48,29 @@ public class Activity4 extends AppCompatActivity {
         Price.setText(PriceString);
         Style.setText(StyleString);
         Group.setText(GroupString);
-        //HARDCODED FOR AMERICAN IN FOODTYPE
         Zip.setText(ZipString);
 
         //calls the random food object cascade of methods calls
         FinalResult = (TextView) findViewById(R.id.FinalResult);
         GlobalPrice = PriceString;
+        GlobalZip = ZipString;
         getBodyText();
 
 
-        Button mapButton = (Button) findViewById(R.id.button16);
-        Uri address = Uri.parse("geo:0,0 ?q=Raising_Canes+" + ZipString);
-        final Intent openMaps = new Intent(Intent.ACTION_VIEW, address);
+        mapButton = (Button) findViewById(R.id.button16);
 
-        mapButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(openMaps);
-            }
-        });
+        /**** CAN DELETE
+//        Uri address = Uri.parse("geo:0,0 ?q=Raising_Canes+" + ZipString);
+//        final Intent openMaps = new Intent(Intent.ACTION_VIEW, address);
 
+//        mapButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(openMaps);
+//            }
+//        });
+         ***/
 
-        /*** TESTING **/
-        //System.out.println("------> " + list.get(2).getName());
     }
 
     //////////// method made for Testing /////////////////////////
@@ -147,7 +149,7 @@ public class Activity4 extends AppCompatActivity {
             wholeLine += docBody.substring(i,i+1);
         }// end for loop
 
-        System.out.println("GLOBAL PRICE: ---->" + GlobalPrice);
+        /** System.out.println("GLOBAL PRICE: ---->" + GlobalPrice); */
         processRestaurants(GlobalPrice, arraySize);
     }// end getLines method
 
@@ -178,7 +180,7 @@ public class Activity4 extends AppCompatActivity {
                 lastIndex = firstIndex;
 
                 while(list.get(lastIndex).getCost().equals(cost)){
-                    //System.out.println(list.get(lastIndex).getName());
+                    /** System.out.println(list.get(lastIndex).getName()); **/
                     if(lastIndex == arraySize-1){
                         break;
                     }
@@ -208,28 +210,30 @@ public class Activity4 extends AppCompatActivity {
         
         int i = 0;
 
+        /** CAN DELETE ***
         //System.out.println("WILL CLEAR AT SIZE: " + ((lastIndex - firstIndex) + 1));
         //System.out.println("LAST NUMBER STORED: "+ lastNumber);
         //System.out.println(firstIndex + " - " + lastIndex);
+         **********/
+
         if(storedRandomInts.size() == ((lastIndex - firstIndex)+1)){
-            //System.out.println(" -------------------- CLEARED AT SIZE OF: ---> " + storedRandomInts.size());
+            /** System.out.println(" -------------------- CLEARED AT SIZE OF: ---> " + storedRandomInts.size()); */
             storedRandomInts.clear();
         }
 
         for(i = 0; i < storedRandomInts.size(); i++) {
             if (randomRestaurant == storedRandomInts.get(i) || randomRestaurant == lastNumber) {
-                //System.out.println("ALREADY STORED:   --> " + storedRandomInts.get(i) + " " + list.get(randomRestaurant).getName() + "    ARRAY SIZE: "  + storedRandomInts.size());
+                /**System.out.println("ALREADY STORED:   --> " + storedRandomInts.get(i) + " " + list.get(randomRestaurant).getName() + "    ARRAY SIZE: "  + storedRandomInts.size()); */
                 randomRestaurant = randomRestaurant(firstIndex, lastIndex);
-                //System.out.println("reroll while loop: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+                /**System.out.println("reroll while loop: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName()); */
                 i = -1;
             }
         }
         
-        //System.out.println("out while loop:   --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
-
+        /**System.out.println("out while loop:   --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());*/
         storedRandomInts.add(randomRestaurant);
         lastNumber = randomRestaurant;
-        //System.out.println("ADDED THE NUMBER: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());
+        /**System.out.println("ADDED THE NUMBER: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());*/
         FinalRestaurantName = list.get(randomRestaurant).getName();
 
         displayRestaurant();
@@ -240,9 +244,28 @@ public class Activity4 extends AppCompatActivity {
             @Override
             public void run() {
                 FinalResult.setText(FinalRestaurantName);
+
+                Uri address = Uri.parse("geo:0,0 ?q="+ FinalRestaurantName + "+" + GlobalZip);
+                final Intent openMaps = new Intent(Intent.ACTION_VIEW, address);
+
+                mapButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(openMaps);
+                    }
+                });
+
             }
         });
+    }
+
+    public void reroll(View view){
+        System.out.println("IN RECREATE METHOD");
+
+        getBodyText();
+        System.out.println(list.get(1).getName());
 
     }
+
 
 }

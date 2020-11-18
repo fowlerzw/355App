@@ -221,19 +221,21 @@
                 android:padding="5dp"
                 android:hint="Enter Zip Code"
                 android:textColorHint="#34090909"
+                android:maxLength="5"
+                android:digits="0123456789"
+                android:gravity="center_horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/GroupLayout"
                 android:layout_marginTop="10dp"
-                android:background="#cb741c"
-                />
+                android:background="#cb741c" />
 
-            <Button
-                android:id="@+id/button14"
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifCoin"
                 android:layout_width="151dp"
                 android:layout_height="160dp"
-                android:background="@drawable/greyscale_coin"
-                android:fontFamily="@font/press_start_2p"
+                android:src="@drawable/ezgif_com_gif_maker"
                 android:onClick="openActivity4"
                 android:text="Flip"
                 android:textColor="#000000"
@@ -241,6 +243,51 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ZipCode"
                 android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="137dp"
+                android:layout_height="129dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/greyscale_coin"
+                android:fontFamily="@font/press_start_2p"
+                android:onClick="openActivity4"
+                android:text="Flip"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ZipCode" />
+
+            <!--            <Button-->
+<!--                android:id="@+id/button15"-->
+<!--                android:layout_width="172dp"-->
+<!--                android:layout_height="190dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="@drawable/ezgif_com_gif_maker"-->
+<!--                android:fontFamily="@font/press_start_2p"-->
+<!--                android:onClick="openActivity4"-->
+<!--                android:text="Flip"-->
+<!--                android:textColor="#000000"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.51"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/ZipCode" />-->
+
+            <!--            <Button-->
+<!--                android:id="@+id/button14"-->
+<!--                android:layout_width="151dp"-->
+<!--                android:layout_height="160dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:background="@drawable/ezgif_com_gif_maker"-->
+<!--                android:fontFamily="@font/press_start_2p"-->
+<!--                android:onClick="openActivity4"-->
+<!--                android:text="Flip"-->
+<!--                android:textColor="#000000"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.52"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/ZipCode" />-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

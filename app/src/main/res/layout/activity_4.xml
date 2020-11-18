@@ -16,7 +16,7 @@
         android:background="@drawable/unselectedbrickpair"
         android:fontFamily="@font/press_start_2p"
         android:text="ReFlip"
-        android:onClick=""
+        android:onClick="reroll"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -117,7 +117,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_toRightOf="@id/ZipHeader"
-            android:text="None-Selected"
+            android:text="None-Entered"
             android:textColor="#000000"
             android:textSize="12sp" />
 
@@ -128,7 +128,6 @@
         android:id="@+id/gifCoin2"
         android:layout_width="396dp"
         android:layout_height="428dp"
-        android:onClick="openActivity2"
         android:src="@drawable/flippinggif_not_infinite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,6 +152,7 @@
         android:hint="Randomizing..."
         android:textColor="#000000"
         android:textSize="16dp"
+        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/SelectionsLayout"

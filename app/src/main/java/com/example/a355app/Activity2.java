@@ -1,12 +1,21 @@
 package com.example.a355app;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import pl.droidsonroids.gif.GifImageView;
 
 public class Activity2 extends AppCompatActivity {
 
@@ -22,16 +31,21 @@ public class Activity2 extends AppCompatActivity {
     String Group = "None Selected";
     String Zip = "None Entered";
     String Final = "None Selected";
-
-    //Restaurant object: reference Class java file to see arguments required
-    Restaurant placeID = new Restaurant();
+    Boolean selectedPrice = false, selectedStyle = false, selectedNumPeople = false ;
+    int ZipLength = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
+
+        final Button greyButton = findViewById(R.id.button14);
+        final GifImageView gifCoin = findViewById(R.id.gifCoin);
+        gifCoin.setVisibility(View.INVISIBLE);
+
         final EditText zip = (EditText) findViewById(R.id.ZipCode);
+
         final Button Button$ = (Button) findViewById(R.id.button3);
         final Button Button$$ = (Button) findViewById(R.id.button4);
         final Button Button$$$ = (Button) findViewById(R.id.button5);
@@ -40,9 +54,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$";
+                selectedPrice = true;
                 Button$.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
                 Button$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
                 Button$$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -50,9 +70,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$$";
+                selectedPrice = true;
                 Button$$.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
                 Button$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
                 Button$$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -60,9 +86,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Price = "$$$";
+                selectedPrice = true;
                 Button$$$.setBackground(getResources().getDrawable(R.drawable.selectedbricksolo));
                 Button$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
                 Button$$.setBackground(getResources().getDrawable(R.drawable.unselectedbricksolo));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -75,10 +107,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Delivery";
+                selectedStyle = true;
                 Style1.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
                 Style2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
                 Style3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
 
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -86,9 +123,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Takeout";
+                selectedStyle = true;
                 Style2.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
                 Style1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
                 Style3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -96,9 +139,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Style = "Dine In";
+                selectedStyle = true;
                 Style3.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
                 Style1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
                 Style2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -111,9 +160,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Solo";
+                selectedNumPeople = true;
                 Group1.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
                 Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
                 Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -121,9 +176,15 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Pair";
+                selectedNumPeople = true;
                 Group2.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
                 Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
                 Group3.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() ==5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -131,11 +192,52 @@ public class Activity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Group = "Group";
+                selectedNumPeople = true;
                 Group3.setBackground(getResources().getDrawable(R.drawable.selectedbrickpair));
                 Group1.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
                 Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
+
+
+                System.out.println("ZIP LENGTH -----> " + zip.getText().toString().length());
+
+                if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() == 5)) {
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
             }
         });
+
+        EditText ZipCode = (EditText) findViewById(R.id.ZipCode);
+        ZipCode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                System.out.println("BEFORE TEXT CHANGED COUNT: " + s.length());
+                if(selectedNumPeople && selectedPrice && selectedStyle && (s.length() == 4)){
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(selectedNumPeople && selectedPrice && selectedStyle && (s.length() == 5)){
+                    greyButton.setVisibility(View.INVISIBLE);
+                    gifCoin.setVisibility(View.VISIBLE);
+                    System.out.println("IN IFFFFFFFFFFFFFFFFFFFFF");
+                }
+                else{
+                    greyButton.setVisibility(View.VISIBLE);
+                    gifCoin.setVisibility(View.INVISIBLE);
+                    System.out.println("IN ELSEEEEEEEEEEEEEEEEEEEE");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
     }
 
@@ -155,7 +257,16 @@ public class Activity2 extends AppCompatActivity {
         Zip = zip.getText().toString();
         act4intent.putExtra(Zip_Text, Zip);
         act4intent.putExtra(Final_Text, Final);
-        startActivity(act4intent);
+
+        System.out.println("LENGTH OF ZIP: ---> "+ Zip.length());
+        if(selectedNumPeople && selectedPrice && selectedStyle && Zip.length() == 5){
+            startActivity(act4intent);
+        }
+        else{
+            System.out.println("TOAST GOES HERE BUT WORT WORK FOR SOME REASON");
+            System.out.println("PLEASE SELECT ALL BLOCKS AND/OR ENTER A 5-DIGIT ZIP");
+        }
+
     }
 
     //This method opens up popup for type of food button

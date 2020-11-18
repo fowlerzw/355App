@@ -7,19 +7,20 @@
     android:background="@drawable/mario8bitbackgroundfinal"
     tools:context=".Activity4">
 
+
     <Button
         android:id="@+id/button15"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginTop="364dp"
         android:background="@drawable/unselectedbrickpair"
         android:fontFamily="@font/press_start_2p"
         android:text="ReFlip"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        android:layout_marginTop="10dp"/>
-
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gifCoin2" />
 
     <RelativeLayout
         android:id="@+id/SelectionsLayout"
@@ -122,14 +123,26 @@
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifCoin2"
+        android:layout_width="396dp"
+        android:layout_height="428dp"
+        android:onClick="openActivity2"
+        android:src="@drawable/flippinggif_not_infinite"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FinalResult"
-        app:srcCompat="@drawable/coin8bit_final" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--old coin imageview-->
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/FinalResult"-->
+<!--        app:srcCompat="@drawable/coin8bit_final" />-->
 
 
     <TextView

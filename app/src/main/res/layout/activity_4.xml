@@ -16,6 +16,7 @@
         android:background="@drawable/unselectedbrickpair"
         android:fontFamily="@font/press_start_2p"
         android:text="ReFlip"
+        android:onClick=""
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

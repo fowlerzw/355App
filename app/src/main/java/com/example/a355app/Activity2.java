@@ -1,22 +1,12 @@
 package com.example.a355app;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
-import android.widget.Button;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Activity2 extends AppCompatActivity {
 
@@ -169,10 +159,10 @@ public class Activity2 extends AppCompatActivity {
     }
 
     //This method opens up popup for type of food button
-    public void openPopUpFoodBtn(View view) {
-        Intent TypeFoodBtn = new Intent(getApplicationContext(), PopUpFoodBtnActivity.class);
-        startActivity(TypeFoodBtn);
-    }
+//    public void openPopUpFoodBtn(View view) {
+//        Intent TypeFoodBtn = new Intent(getApplicationContext(), PopUpFoodBtnActivity.class);
+//        startActivity(TypeFoodBtn);
+//    }
 
     //junit test required for 10/30/2020 deliverable.
     // needs some tweaking

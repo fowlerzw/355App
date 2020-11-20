@@ -1,7 +1,5 @@
 package com.example.a355app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,11 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class Activity4 extends AppCompatActivity {
@@ -27,6 +29,10 @@ public class Activity4 extends AppCompatActivity {
     private String GlobalZip;
     private Button mapButton;
 
+    //for the reflip button to rerun the flipping gif
+    GifImageView flippingGif;
+    Button reflip;
+    int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +77,57 @@ public class Activity4 extends AppCompatActivity {
 //        });
          ***/
 
+        //For the reflip button to rerun flipping gif
+        flippingGif = (GifImageView) findViewById(R.id.gifCoin2);
+        reflip = (Button) findViewById(R.id.button15);
+
+        reflip.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+
+                //call to reroll
+                reroll(v);
+
+                if (flag == 0) {
+                    flippingGif.setImageResource(R.drawable.flippinggif_loop_once);
+                    flag = 1;
+                } else if (flag == 1) {
+                    flippingGif.setImageResource(R.drawable.flippinggif_loop_once);
+                    flag = 2;
+                } else if (flag == 2) {
+                    flippingGif.setImageResource(R.drawable.flippinggif_loop_once);
+                    flag = 0;
+                }
+            }
+        });
+        //end the onClick for reflip gif
     }
+
+    //this code is for the reflip button, it does not effect the functionality but I am going to keep it here for now to revisit later and do more research of its importance
+    //Methods to reflip gif onClick
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
+    //end methods for reflip
 
     //////////// method made for Testing /////////////////////////
     public static String getPrice(){

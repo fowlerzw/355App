@@ -103,10 +103,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/press_start_2p"
                 android:text="Style"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/priceButtonLayout" />
 
@@ -214,22 +216,22 @@
 
             </RelativeLayout>
 
+
             <EditText
                 android:id="@+id/ZipCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:hint="Enter Zip Code"
-                android:textColorHint="#34090909"
-                android:maxLength="5"
+                android:layout_marginTop="32dp"
+                android:background="#cb741c"
                 android:digits="0123456789"
                 android:gravity="center_horizontal"
-                app:layout_constraintStart_toStartOf="parent"
+                android:hint="Enter Zip Code"
+                android:maxLength="5"
+                android:padding="5dp"
+                android:textColorHint="#34090909"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/GroupLayout"
-                android:layout_marginTop="10dp"
-                android:background="#cb741c" />
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/GroupLayout" />
 
             <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/gifCoin"

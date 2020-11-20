@@ -149,15 +149,14 @@
         android:id="@+id/FinalResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
         android:hint="Randomizing..."
         android:textColor="#000000"
-        android:textSize="16dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SelectionsLayout"
-        android:layout_marginTop="5dp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SelectionsLayout" />
 
     <Button
         android:id="@+id/button16"

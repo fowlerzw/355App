@@ -216,7 +216,7 @@ public class Activity4 extends AppCompatActivity {
 
         Restaurant place = new Restaurant();
         place.setCost(tokens[0]);
-        place.setName(tokens[1]);
+        place.setName(tokens[1].replaceAll("_", " "));
         place.setTypeOfFood(tokens[2]);
 
         list.add(place);

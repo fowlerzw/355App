@@ -16,4 +16,17 @@
     <string name="skip_bttn">Skip</string>
     <string name="next_bttn">Next</string>
     <string name="let_get_started">Let\'s Get Started</string>
+
+    <!-- Tutorial Strings -->
+    <string name="tutScreen">
+        Getting Started:\n\n
+        This app is designed to help you pick where to eat when you don\'t know what you want.\n\n
+        To get started follow the steps below.\n\n
+        1.\tOn the main menu press the coin to go to the filter selection page.\n\n
+        2.\tOn the filters page, fill out each category to match what you are looking for.\n\n
+        3.\tEnter your zipcode then press the coin to get your restaurant.\n\n
+        4.\tOn the next screen it shows you your selection as well as the criteria.\n\n
+        5.\tYou can either press the "maps" button to navigate to your restaurant, or re-flip to get a different restaurant.\n\n
+        Enjoy, and Flip Away!
+    </string>
 </resources>

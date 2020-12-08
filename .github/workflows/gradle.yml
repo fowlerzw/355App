@@ -27,5 +27,10 @@ jobs:
     
     - name: Unit Tests
       run: bash ./gradlew test
+    - name: Send Push Notification
+      uses: techulus/push-github-action@1.0.0
+      env:
+        API_KEY: 5a739d7d-3082-4036-8528-dd622425bba9
+        MESSAGE: "Hey Zak, Flip n' Pick was just built "
       
  

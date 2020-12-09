@@ -32,7 +32,6 @@ public class Activity2 extends AppCompatActivity {
     String Zip = "None Entered";
     String Final = "None Selected";
     Boolean selectedPrice = false, selectedStyle = false, selectedNumPeople = false ;
-    int ZipLength = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -198,8 +197,6 @@ public class Activity2 extends AppCompatActivity {
                 Group2.setBackground(getResources().getDrawable(R.drawable.unselectedbrickpair));
 
 
-                System.out.println("ZIP LENGTH -----> " + zip.getText().toString().length());
-
                 if(selectedNumPeople && selectedPrice && selectedStyle && (zip.getText().toString().length() == 5)) {
                     greyButton.setVisibility(View.INVISIBLE);
                     gifCoin.setVisibility(View.VISIBLE);
@@ -211,7 +208,6 @@ public class Activity2 extends AppCompatActivity {
         ZipCode.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                System.out.println("BEFORE TEXT CHANGED COUNT: " + s.length());
                 if(selectedNumPeople && selectedPrice && selectedStyle && (s.length() == 4)){
                     greyButton.setVisibility(View.INVISIBLE);
                     gifCoin.setVisibility(View.VISIBLE);
@@ -223,12 +219,10 @@ public class Activity2 extends AppCompatActivity {
                 if(selectedNumPeople && selectedPrice && selectedStyle && (s.length() == 5)){
                     greyButton.setVisibility(View.INVISIBLE);
                     gifCoin.setVisibility(View.VISIBLE);
-                    System.out.println("IN IFFFFFFFFFFFFFFFFFFFFF");
                 }
                 else{
                     greyButton.setVisibility(View.VISIBLE);
                     gifCoin.setVisibility(View.INVISIBLE);
-                    System.out.println("IN ELSEEEEEEEEEEEEEEEEEEEE");
                 }
             }
 
@@ -258,7 +252,6 @@ public class Activity2 extends AppCompatActivity {
         act4intent.putExtra(Zip_Text, Zip);
         act4intent.putExtra(Final_Text, Final);
 
-        System.out.println("LENGTH OF ZIP: ---> "+ Zip.length());
         if(selectedNumPeople && selectedPrice && selectedStyle && Zip.length() == 5){
             startActivity(act4intent);
         }

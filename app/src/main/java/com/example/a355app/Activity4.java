@@ -29,6 +29,7 @@ public class Activity4 extends AppCompatActivity {
     private String GlobalZip;
     private Button mapButton;
 
+
     //for the reflip button to rerun the flipping gif
     GifImageView flippingGif;
     Button reflip;
@@ -38,6 +39,10 @@ public class Activity4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
+
+        TextView randomizerWord = (TextView) findViewById(R.id.FinalResult);
+
+
 
         String PriceString = getString(Activity2.Price_Text);
         String StyleString = getString(Activity2.Style_Text);

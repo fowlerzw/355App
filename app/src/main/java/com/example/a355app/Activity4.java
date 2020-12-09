@@ -1,6 +1,7 @@
 package com.example.a355app;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Timer;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -39,9 +42,6 @@ public class Activity4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
-
-        TextView randomizerWord = (TextView) findViewById(R.id.FinalResult);
-
 
 
         String PriceString = getString(Activity2.Price_Text);
@@ -296,8 +296,13 @@ public class Activity4 extends AppCompatActivity {
     }
 
     public void reroll(View view){
+
+        // ideally would like to figure out how to make this text in the FinalResult xml TextView
+        // revert back to the original view every time the reroll is called
+        FinalResult.setText("Randomizing...");
+
         getBodyText();
-        System.out.println(list.get(1).getName());
+
     }
 
 }

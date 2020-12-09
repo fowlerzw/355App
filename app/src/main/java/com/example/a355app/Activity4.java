@@ -62,20 +62,8 @@ public class Activity4 extends AppCompatActivity {
         GlobalZip = ZipString;
         getBodyText();
 
-
         mapButton = (Button) findViewById(R.id.button16);
 
-        /**** CAN DELETE
-//        Uri address = Uri.parse("geo:0,0 ?q=Raising_Canes+" + ZipString);
-//        final Intent openMaps = new Intent(Intent.ACTION_VIEW, address);
-
-//        mapButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(openMaps);
-//            }
-//        });
-         ***/
 
         //For the reflip button to rerun flipping gif
         flippingGif = (GifImageView) findViewById(R.id.gifCoin2);
@@ -205,7 +193,6 @@ public class Activity4 extends AppCompatActivity {
             wholeLine += docBody.substring(i,i+1);
         }// end for loop
 
-        /** System.out.println("GLOBAL PRICE: ---->" + GlobalPrice); */
         processRestaurants(GlobalPrice, arraySize);
     }// end getLines method
 
@@ -236,7 +223,6 @@ public class Activity4 extends AppCompatActivity {
                 lastIndex = firstIndex;
 
                 while(list.get(lastIndex).getCost().equals(cost)){
-                    /** System.out.println(list.get(lastIndex).getName()); **/
                     if(lastIndex == arraySize-1){
                         break;
                     }
@@ -266,30 +252,19 @@ public class Activity4 extends AppCompatActivity {
         
         int i = 0;
 
-        /** CAN DELETE ***
-        //System.out.println("WILL CLEAR AT SIZE: " + ((lastIndex - firstIndex) + 1));
-        //System.out.println("LAST NUMBER STORED: "+ lastNumber);
-        //System.out.println(firstIndex + " - " + lastIndex);
-         **********/
-
         if(storedRandomInts.size() == ((lastIndex - firstIndex)+1)){
-            /** System.out.println(" -------------------- CLEARED AT SIZE OF: ---> " + storedRandomInts.size()); */
             storedRandomInts.clear();
         }
 
         for(i = 0; i < storedRandomInts.size(); i++) {
             if (randomRestaurant == storedRandomInts.get(i) || randomRestaurant == lastNumber) {
-                /**System.out.println("ALREADY STORED:   --> " + storedRandomInts.get(i) + " " + list.get(randomRestaurant).getName() + "    ARRAY SIZE: "  + storedRandomInts.size()); */
                 randomRestaurant = randomRestaurant(firstIndex, lastIndex);
-                /**System.out.println("reroll while loop: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName()); */
                 i = -1;
             }
         }
         
-        /**System.out.println("out while loop:   --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());*/
         storedRandomInts.add(randomRestaurant);
         lastNumber = randomRestaurant;
-        /**System.out.println("ADDED THE NUMBER: --> " + randomRestaurant + " " + list.get(randomRestaurant).getName());*/
         FinalRestaurantName = list.get(randomRestaurant).getName();
 
         displayRestaurant();
@@ -316,12 +291,8 @@ public class Activity4 extends AppCompatActivity {
     }
 
     public void reroll(View view){
-        System.out.println("IN RECREATE METHOD");
-
         getBodyText();
         System.out.println(list.get(1).getName());
-
     }
-
 
 }
